@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Write</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect"href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap"rel="stylesheet">
+
+  </head>
+
+<body>
+
+<div class="container-box">
+  <h1 class="underline">Write</h1>
+
+  <div class="full-width full-height">
+
+    <div class="full-width bottom">
+      <div class="row">
+        <p>Q?A</p>
+        <textarea id="writing-area" class="relaxed full-width input-field bordered" type="text"></textarea>
+      </div>
+      <div class="row">
+        <button class="btn">Start</button>
+        <button class="btn">End</button>
+        <button class="btn" onclick="copyText('writing-area')">Copy</button>
+        <button class="btn float-right">Reset</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function copyText(id) {
+  var txt = document.getElementById(id);
+
+  txt.select();
+  txt.setSelectionRange(0, 99999); /* For mobile devices */
+
+  document.execCommand("copy");
+}
+</script>
+
+</body>
+</html> 
