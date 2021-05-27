@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Write</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="preconnect"href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap"rel="stylesheet">
+<html lang="en-US">
 
-  </head>
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Write</title>
+<link rel='manifest' href='manifest.json'>
+<link rel="stylesheet" href="style.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon.png">
+<link rel="icon" type="image/png" sizes="any" href="images/icon.png">
+
+</head>
 
 <body>
 
@@ -16,33 +22,26 @@
 
   <div class="full-width full-height">
 
+    <form>
     <div class="full-width bottom">
       <div class="row">
-        <p>Q?A</p>
-        <textarea id="writing-area" class="relaxed full-width input-field bordered" type="text"></textarea>
+        <small id="writing-area-one-chars" class="chars-typed float-right"></small>
+        <textarea onkeyup="countRandom('writing-area-one', 'writing-area-one-chars')" id="writing-area-one" class="relaxed full-width input-field bordered writing-area " type="text"></textarea>
       </div>
-      <div class="row">
-        <button class="btn">Start</button>
-        <button class="btn">End</button>
-        <button class="btn" onclick="copyText('writing-area')">Copy</button>
-        <button class="btn float-right">Reset</button>
-      </div>
+        <div class="row">
+          <button class="btn" onclick="copyText('writing-area-one')">Copy</button>
+          <input type="reset" class="btn float-right" value="Reset">
+        </div>
     </div>
+    </form>
 
   </div>
 
 </div>
 
-<script>
-  function copyText(id) {
-  var txt = document.getElementById(id);
 
-  txt.select();
-  txt.setSelectionRange(0, 99999); /* For mobile devices */
-
-  document.execCommand("copy");
-}
-</script>
+<script src="script.js"></script>
 
 </body>
-</html> 
+
+</html>
